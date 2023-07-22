@@ -1,0 +1,37 @@
+service: capital-quiz-severless-node
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  httpApi:
+    cors:
+      allowedOrigins:
+        - http://localhost:5173/
+      allowedHeaders:
+        - Content-Type
+        - X-Amz-Date
+        - Authorization
+        - X-Api-Key
+        - X-Amz-Security-Token
+        - X-Amz-User-Agent
+      allowedMethods:
+        - get
+      allowCredentials: true
+
+functions:
+  api:
+    handler: lambdas/quiz/capital.question
+    events:
+      - httpApi:
+          path: /question
+          method: get
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+    stageVariables:
+      auth: "placeholder"
