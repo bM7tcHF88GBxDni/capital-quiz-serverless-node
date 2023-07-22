@@ -9,6 +9,7 @@
 Global dependency:
 
 - serverless
+- node v18 or greater (for native fetch)
 
 Dev dependency:
 
