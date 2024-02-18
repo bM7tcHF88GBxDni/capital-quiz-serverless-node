@@ -2,7 +2,7 @@
 
 - This repository is an internal Lambda API which calls an external, public API for data, normalises this data for our purpose and returns to FE (capital-quiz-vite).
 
-- Please run both repositories simultaneously.
+- Please run both repositories simultaneously. This is the Serverless repository, find the [React repository here](https://github.com/johnson-singh-software/capital-quiz-react).
 
 ## How To Run Locally
 
